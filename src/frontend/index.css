@@ -1,0 +1,120 @@
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url('/assets/fonts/PlayfairDisplay.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url('/assets/fonts/DMSans.woff2') format('woff2');
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Dark scholarly theme - slate + amber gold */
+    --background: 0.18 0.01 250;
+    --foreground: 0.93 0.01 250;
+
+    --card: 0.21 0.015 250;
+    --card-foreground: 0.93 0.01 250;
+
+    --popover: 0.21 0.015 250;
+    --popover-foreground: 0.93 0.01 250;
+
+    --primary: 0.78 0.14 75;
+    --primary-foreground: 0.15 0.01 250;
+
+    --secondary: 0.27 0.02 250;
+    --secondary-foreground: 0.90 0.01 250;
+
+    --muted: 0.27 0.015 250;
+    --muted-foreground: 0.62 0.02 250;
+
+    --accent: 0.75 0.12 75;
+    --accent-foreground: 0.15 0.01 250;
+
+    --destructive: 0.60 0.22 22;
+    --destructive-foreground: 0.98 0.01 22;
+
+    --border: 0.30 0.02 250;
+    --input: 0.27 0.02 250;
+    --ring: 0.78 0.14 75;
+
+    --success: 0.65 0.15 145;
+    --success-foreground: 0.15 0.01 145;
+
+    --radius: 0.5rem;
+
+    --chart-1: 0.78 0.14 75;
+    --chart-2: 0.65 0.15 145;
+    --chart-3: 0.60 0.22 22;
+    --chart-4: 0.70 0.12 200;
+    --chart-5: 0.72 0.12 310;
+
+    --sidebar: 0.16 0.012 250;
+    --sidebar-foreground: 0.90 0.01 250;
+    --sidebar-primary: 0.78 0.14 75;
+    --sidebar-primary-foreground: 0.15 0.01 250;
+    --sidebar-accent: 0.25 0.02 250;
+    --sidebar-accent-foreground: 0.90 0.01 250;
+    --sidebar-border: 0.28 0.02 250;
+    --sidebar-ring: 0.78 0.14 75;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    color-scheme: dark;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body;
+    min-height: 100vh;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer utilities {
+  .exam-grid-bg {
+    background-image: radial-gradient(circle at 1px 1px, oklch(0.35 0.02 250 / 0.4) 1px, transparent 0);
+    background-size: 32px 32px;
+  }
+
+  .gold-shimmer {
+    background: linear-gradient(90deg, oklch(0.78 0.14 75), oklch(0.85 0.16 80), oklch(0.78 0.14 75));
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .card-glow {
+    box-shadow: 0 0 0 1px oklch(0.30 0.02 250), 0 4px 24px oklch(0.78 0.14 75 / 0.06);
+  }
+
+  .correct-glow {
+    box-shadow: 0 0 0 2px oklch(0.65 0.15 145 / 0.5);
+    background-color: oklch(0.65 0.15 145 / 0.08);
+  }
+
+  .wrong-glow {
+    box-shadow: 0 0 0 2px oklch(0.60 0.22 22 / 0.5);
+    background-color: oklch(0.60 0.22 22 / 0.08);
+  }
+}
